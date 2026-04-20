@@ -73,7 +73,8 @@ go build -o bin/kumo ./cmd/kumo
 export KUBECONFIG=~/.kube/config
 
 # Note: I use port 9090 for metrics locally to avoid conflicts with Prometheus
-./bin/kumo --metrics-bind-address :9090 --health-probe-bind-address :8081
+# Using port 8082 for health probe to avoid conflicts with other local controllers
+./bin/kumo --metrics-bind-address :9090 --health-probe-bind-address :8082
 ```
 
 ## Contributing
